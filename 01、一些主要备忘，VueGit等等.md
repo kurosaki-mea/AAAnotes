@@ -43,10 +43,10 @@ git config --global --list
 
 3. 全局配置文件：文件路径：C:\Users\用户名字\.gitconfig
 
-# 修改全局用户名（换成 3号 GitHub 的用户名）
+# 修改全局用户名（换成 GitHub 的用户名）
 git config --global user.name "你的GitHub用户名"
 
-# 修改全局邮箱（务必换成 3号 GitHub 绑定的邮箱！）
+# 修改全局邮箱（务必换成 GitHub 绑定的邮箱！）
 git config --global user.email "你的GitHub绑定邮箱"
 
 ==================================
