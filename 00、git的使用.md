@@ -85,18 +85,6 @@ git remote add origin https://github.com/mea75/my-vue-app.git
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 999、一些问题 FAQ
 ### 每次开机git push都需要登录
@@ -112,11 +100,5 @@ git remote add origin https://github.com/mea75/my-vue-app.git
 **凭据管理器**\
 第一次登录后，登录信息token将存储到Windows系统里面的凭据管理器中，
 访问路径为：`控制面板\用户帐户\凭据管理器\Windows凭据` ，然后可以修改或者删除词条凭据，然后就可以再次触发登录切换账号等等操作
-
-
-
-
-
-
 
 
