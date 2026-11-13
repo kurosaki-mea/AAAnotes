@@ -8,7 +8,10 @@
 git init
 git add .
 git commit -m '本次提交更新：xxx'
-git push
+git remote add origin 你的仓库地址   //把远程仓库网址添加进来，并给它起个短名叫 origin
+git branch -M main   	//把本地分支重命名为 main
+git push -u origin main  //第一次把本地项目和远程仓库对接
+git push   // 后续的推送提交
 ```
 
 - `git init`
@@ -22,11 +25,19 @@ git push
 -M 是 --move --force 的简写，即重命名并覆盖同名分支
 作用：老版本 Git 默认分支叫 master，现在 GitHub 等平台默认用 main
 - `git remote add origin 远程仓库地址`
-↑ 关联远程仓库；给本地仓库添加一个远程仓库，并起别名 origin（约定俗成的默认名）。
+↑ 关联远程仓库，把本地仓库和远程仓库连起来；
+这句话的意思是： 把这个远程仓库网址添加进来，并给它起个短名叫 origin；
+给本地仓库添加一个远程仓库，并起别名 origin（约定俗成的默认名）。
 远程仓库地址：需要替换成真实地址，例如 https://github.com/用户名/仓库名.git 或 SSH 地址 git@github.com:用户名/仓库名.git。
 之后就可以用 origin 代替那一长串地址。
 - `git push -u origin main`
 推送到远程并建立追踪；把本地 main 分支推送到远程仓库 origin
+意思就是：我要推送到 origin 的 main 上去
+git push：我要往云端推送代码
+-u：核心参数（意思是 upstream，上游绑定）
+origin：推送到刚才起名叫 origin 的那个远程仓库
+main：推送到远端的 main 这个分支上
+
 - `git push`
 推送提交(commit)
 推送，把本地仓库的提交"推"到远程仓库
