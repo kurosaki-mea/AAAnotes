@@ -92,9 +92,34 @@ git remote add origin [远程仓库地址]
 git remote add origin https://github.com/mea75/my-vue-app.git
 
 ---
+## 4、删除本地和云端仓库 重新开始 删除历史记录
+首先把文件夹内的`.git`删除，然后就变成了普通的文件夹，没有了git仓库功能，然后把github上的云端仓库也删除了，或者使用强制覆盖，同样没有**历史记录**恢复的功能
+```
+git init
+git add .
+git commit -m '新的开始'
 
+//把本地默认分支改名为main，和github对齐
+git branch -M main      
 
+//告诉本地，要传到哪个仓库去
+git remote add origin 远程仓库https链接
 
+//第一次推送，-u记住这个绑定关系
+git push -u origin main --force  //第一次推送，并且-f强制覆盖
+
+效果：github别管我以前云端那些旧历史了，直接用我本地这最新干净的版本把云端强行覆盖掉
+```
+**或者**
+直接删除github云端仓库，然后删除本地`.git`文件夹，再接着`git init`重新开始
+```
+git init
+git add .
+git commit -m '第一次推送'
+git branch -M main
+git remote add origin 远程仓库链接
+git push -u origin main
+```
 
 ---
 ## 999、一些问题 FAQ
