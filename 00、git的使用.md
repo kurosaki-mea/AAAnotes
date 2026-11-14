@@ -93,24 +93,27 @@ git remote add origin https://github.com/mea75/my-vue-app.git
 
 ---
 ## 4、删除本地和云端仓库 重新开始 删除历史记录
-首先把文件夹内的`.git`删除，然后就变成了普通的文件夹，没有了git仓库功能，然后重新开始上传到github，-f强制覆盖原有的仓库，这样就没有了**历史记录**
+### 方式1：保留云端仓库，用本地干净版本“强制覆盖”
+1. 先把本地文件夹内的隐藏目录 `.git` 删除（此时变成普通文件夹，本地历史记录清空），没有了git仓库功能
+2. 然后重新开始上传到github，-f强制覆盖原有的仓库，这样就没有了**历史记录**
 ```
 git init
 git add .
 git commit -m '新的开始'
 
-//把本地默认分支改名为main，和github对齐
+#把本地默认分支改名为main，和github对齐
 git branch -M main      
 
-//告诉本地，要传到哪个仓库去
+#告诉本地，要传到哪个仓库去
 git remote add origin 远程仓库https链接
 
-//第一次推送，-u记住这个绑定关系，并且-f强制覆盖
+#第一次推送，-u记住这个绑定关系，并且-f强制覆盖
 git push -u origin main --force
 
-效果：github别管我以前云端那些旧历史了，直接用我本地这最新干净的版本把云端强行覆盖掉
+效果：让 GitHub 丢弃以前云端的所有旧历史，直接用本地最新、干净的版本强行覆盖
 ```
-**或者，直接删除github云端仓库，然后删除本地`.git`文件夹，再接着`git init`重新开始**
+### 方式2：彻底删除 重来
+1. 直接删除github云端仓库，然后删除本地`.git`文件夹，再接着`git init`重新开始。如果使用vscode自建库功能，`commit`完直接`git push`即可
 ```
 git init
 git add .
